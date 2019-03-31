@@ -36,7 +36,7 @@ RUN apk add --no-cache openssl-dev \
 	libffi-dev \
 	libjpeg-turbo \
 	libjpeg-turbo-utils \
-	libjpeg-turbo-devel \
+	libjpeg-turbo-dev \
 	libxslt \
 	libxslt-dev \
 	libxml2-dev \
