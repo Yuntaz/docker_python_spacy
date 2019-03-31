@@ -41,7 +41,7 @@ RUN apk add --no-cache openssl-dev \
 	libxslt-dev \
 	libxml2-dev \
 	zlib-devel \
-	libpng-devel \
+	libpng-dev \
 	libffi-devel \
 	nss 
 RUN pip install --upgrade pip
