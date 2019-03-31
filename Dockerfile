@@ -1,5 +1,5 @@
 # Docker with Python 3.7.3 and Spacy 
-FROM python:3.7.3
+FROM python:3.7.3-alpine
 MAINTAINER Yuntaz <docker@yuntaz.com>
 
 # ensure local python is preferred over distribution python
