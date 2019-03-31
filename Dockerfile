@@ -23,7 +23,7 @@ RUN apk update
 RUN apk add gcc
 RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
-RUN pip install spacy == 2.0.10
+RUN pip install spacy==2.0.10
 RUN pip install pyinstaller --no-use-pep517
 RUN pip install cx_freeze  
 RUN python3 -m spacy download es_core_news_md
