@@ -20,11 +20,11 @@ WORKDIR /opt
 
 # Update
 RUN apk update
-RUN apk add gcc \
+RUN apk add --no-cache openssl-dev \
+	gcc \
 	g++ \
 	build-base \
-        gcc \
-        wget \
+	wget \
 	git \
 	bash \
 	sudo \
@@ -43,7 +43,6 @@ RUN apk add gcc \
 	zlib-devel \
 	libpng-devel \
 	libffi-devel \
-	openssl-devel \
 	nss 
 RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
