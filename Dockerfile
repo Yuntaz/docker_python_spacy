@@ -40,9 +40,9 @@ RUN apk add --no-cache openssl-dev \
 	libxslt \
 	libxslt-dev \
 	libxml2-dev \
-	zlib-devel \
+	zlib-dev \
 	libpng-dev \
-	libffi-devel \
+	libffi-dev \
 	nss 
 RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
