@@ -20,7 +20,31 @@ WORKDIR /opt
 
 # Update
 RUN apk update
-RUN apk add gcc
+RUN apk add gcc \
+	g++ \
+	build-base \
+        gcc \
+        wget \
+	git \
+	bash \
+	sudo \
+	tar \
+	unzip \
+	less \
+	curl \
+	gzip \
+	libffi-dev \
+	libjpeg-turbo \
+	libjpeg-turbo-utils \
+	libjpeg-turbo-devel \
+	libxslt \
+	libxslt-dev \
+	libxml2-dev \
+	zlib-devel \
+	libpng-devel \
+	libffi-devel \
+	openssl-devel \
+	nss 
 RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
 RUN pip install spacy==2.0.10
