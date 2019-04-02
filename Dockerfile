@@ -1,7 +1,7 @@
 # Docker with Python 3.7.3 and Spacy
 FROM python:3.7.3-alpine
 MAINTAINER Yuntaz <docker@yuntaz.com>
-LABEL VERSION="2.0"
+LABEL VERSION="2.1"
 
 # ensure local python is preferred over distribution python
 ENV PATH /usr/local/bin:$PATH
@@ -37,7 +37,7 @@ RUN apk add --no-cache openssl-dev \
 	libffi-dev \
 	libjpeg-turbo \
 	libjpeg-turbo-utils \
-	libjpeg-turbo-devel \
+	libjpeg-turbo-dev \
 	libxslt \
 	libxslt-dev \
 	libxml2-dev \
@@ -56,3 +56,10 @@ RUN pip install https://github.com/pyinstaller/pyinstaller/archive/develop.zip -
 RUN pip install spacy==2.0.10
 RUN python3 -m spacy download es_core_news_md
 RUN python3 -m spacy link es_core_news_md es --force
+RUN python3 -m nltk.downloader -d /root/nltk_data stopwords
+RUN ln -s /root/nltk_data/ /usr/local/nltk_data
+RUN ln -s /root/nltk_data/ /usr/local/share/nltk_data
+RUN ln -s /root/nltk_data/ /usr/local/lib/nltk_data
+RUN ln -s /root/nltk_data/ /usr/share/nltk_data
+RUN ln -s /root/nltk_data/ /usr/local/share/nltk_data
+RUN ln -s /root/nltk_data/ /usr/lib/nltk_data
