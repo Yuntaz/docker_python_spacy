@@ -1,7 +1,7 @@
 # Docker with Python 3.6 and Spacy
 FROM centos/python-36-centos7
 MAINTAINER Yuntaz <docker@yuntaz.com>
-LABEL VERSION="3.5"
+LABEL VERSION="3.6"
 
 ENV PYTHON_VERSION 3.6
 
@@ -32,3 +32,7 @@ RUN ln -s /root/nltk_data/ /usr/local/lib/nltk_data
 RUN ln -s /root/nltk_data/ /usr/share/nltk_data
 RUN ln -s /root/nltk_data/ /usr/local/share/nltk_data
 RUN ln -s /root/nltk_data/ /usr/lib/nltk_data
+RUN ln -s /root/nltk_data/ /opt/app-root/src/nltk_data
+RUN ln -s /root/nltk_data/ /opt/app-root/nltk_data
+RUN ln -s /root/nltk_data/ /opt/app-root/share
+RUN ln -s /root/nltk_data/ /opt/app-root/lib
