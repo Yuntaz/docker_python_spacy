@@ -1,6 +1,7 @@
-# Docker with Python 3.7.3 and Spacy 
+# Docker with Python 3.7.3 and Spacy
 FROM python:3.7.3-alpine
 MAINTAINER Yuntaz <docker@yuntaz.com>
+LABEL VERSION="2.0"
 
 # ensure local python is preferred over distribution python
 ENV PATH /usr/local/bin:$PATH
@@ -43,15 +44,15 @@ RUN apk add --no-cache openssl-dev \
 	zlib-devel \
 	libpng-devel \
 	libffi-devel \
-	nss 
+	nss \
+	python3-tkinter
+RUN ln -s /lib/libc.musl-x86_64.so.1 ldd
+RUN apk add --update bash && rm -rf /var/cache/apk/*
 RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
-RUN pip install spacy==2.0.10
+RUN pip install cx_freeze
 RUN pip install pyinstaller --no-use-pep517
-RUN pip install cx_freeze  
+RUN pip install https://github.com/pyinstaller/pyinstaller/archive/develop.zip --no-use-pep517
+RUN pip install spacy==2.0.10
 RUN python3 -m spacy download es_core_news_md
 RUN python3 -m spacy link es_core_news_md es --force
-
-
-
-
