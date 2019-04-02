@@ -1,7 +1,7 @@
 # Docker with Python 3.6 and Spacy
 FROM centos/python-36-centos7
 MAINTAINER Yuntaz <docker@yuntaz.com>
-LABEL VERSION="3.0"
+LABEL VERSION="3.1"
 
 ENV PYTHON_VERSION 3.6
 
@@ -9,7 +9,7 @@ USER root
 WORKDIR /opt
 
 # Linux updates
-RUN yum update
+RUN yum update -y
 
 # Python installs
 RUN yum install -y python3-tkinter
