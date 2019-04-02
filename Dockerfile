@@ -41,9 +41,9 @@ RUN apk add --no-cache openssl-dev \
 	libxslt \
 	libxslt-dev \
 	libxml2-dev \
-	zlib-devel \
-	libpng-devel \
-	libffi-devel \
+	zlib-dev \
+	libpng-dev \
+	libffi-dev \
 	nss \
 	python3-tkinter
 RUN ln -s /lib/libc.musl-x86_64.so.1 ldd
