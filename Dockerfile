@@ -1,7 +1,7 @@
 # Docker with Python 3.6 and Spacy
 FROM centos/python-36-centos7
 MAINTAINER Yuntaz <docker@yuntaz.com>
-LABEL VERSION="3.4"
+LABEL VERSION="3.5"
 
 ENV PYTHON_VERSION 3.6
 
@@ -21,7 +21,7 @@ RUN pip install --upgrade setuptools
 RUN pip install cx_freeze
 RUN pip install pyinstaller --no-use-pep517
 RUN pip install https://github.com/pyinstaller/pyinstaller/archive/develop.zip --no-use-pep517
-RUN pip install spacy==2.0.10
+RUN pip install spacy
 RUN python3 -m spacy download es_core_news_md
 RUN python3 -m spacy link es_core_news_md es --force
 RUN pip install nltk
