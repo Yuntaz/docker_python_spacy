@@ -1,7 +1,7 @@
 # Docker with Python 3.6 and Spacy
 FROM centos/python-36-centos7
 MAINTAINER Yuntaz <docker@yuntaz.com>
-LABEL VERSION="3.1"
+LABEL VERSION="3.2"
 
 ENV PYTHON_VERSION 3.6
 
@@ -9,10 +9,11 @@ USER root
 WORKDIR /opt
 
 # Linux updates
-RUN yum update -y
+RUN yum -y install epel-release  
+RUN yum -y update 
 
 # Python installs
-RUN yum install -y python3-tkinter
+RUN yum install -y python36u-tkinter
 RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
 RUN pip install cx_freeze
