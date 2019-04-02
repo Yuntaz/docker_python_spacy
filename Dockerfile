@@ -1,15 +1,17 @@
 # Docker with Python 3.6 and Spacy
 FROM centos/python-36-centos7
 MAINTAINER Yuntaz <docker@yuntaz.com>
-LABEL VERSION="3.2"
+LABEL VERSION="3.3"
 
 ENV PYTHON_VERSION 3.6
 
 USER root
 WORKDIR /opt
 
-# Linux updates
+# Repos
 RUN yum -y install epel-release  
+RUN yum install https://$(rpm -E '%{?centos:centos}%{!?centos:rhel}%{rhel}').iuscommunity.org/ius-release.rpm
+# Update
 RUN yum -y update 
 
 # Python installs
